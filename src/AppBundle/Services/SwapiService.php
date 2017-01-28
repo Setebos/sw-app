@@ -43,10 +43,100 @@ class SwapiService extends GuzzleClient {
     	return array(
             "getPlanets" => array(
                 "httpMethod" => "GET",
-                // l'uri est ajoutée à notre base_uri définie par défaut
                 "uri" => $uri . "planets/",
                 "responseModel" => "jsonResponse"
-            )
+            ),
+            "getPlanet" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "planets/{id}",
+                "parameters" => array(
+                	"id" => array(
+                		"required" => true,
+                        "location" => "uri"
+                	)
+                ),
+                "responseModel" => "jsonResponse"
+            ),
+            "getPeoples" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "people/",
+                "responseModel" => "jsonResponse"
+            ),
+            "getPeople" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "people/{id}",
+                "parameters" => array(
+                	"id" => array(
+                		"required" => true,
+                        "location" => "uri"
+                	)
+                ),
+                "responseModel" => "jsonResponse"
+            ),
+            "getStarships" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "starships/",
+                "responseModel" => "jsonResponse"
+            ),
+            "getStarship" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "starships/{id}",
+                "parameters" => array(
+                	"id" => array(
+                		"required" => true,
+                        "location" => "uri"
+                	)
+                ),
+                "responseModel" => "jsonResponse"
+            ),
+            "getVehicles" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "vehicles/",
+                "responseModel" => "jsonResponse"
+            ),
+            "getVehicle" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "vehicles/{id}",
+                "parameters" => array(
+                	"id" => array(
+                		"required" => true,
+                        "location" => "uri"
+                	)
+                ),
+                "responseModel" => "jsonResponse"
+            ),
+            "getSpecies" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "species/",
+                "responseModel" => "jsonResponse"
+            ),
+            "getSpecie" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "species/{id}",
+                "parameters" => array(
+                	"id" => array(
+                		"required" => true,
+                        "location" => "uri"
+                	)
+                ),
+                "responseModel" => "jsonResponse"
+            ),
+            "getFilms" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "films/",
+                "responseModel" => "jsonResponse"
+            ),
+            "getFilm" => array(
+                "httpMethod" => "GET",
+                "uri" => $uri . "films/{id}",
+                "parameters" => array(
+                	"id" => array(
+                		"required" => true,
+                        "location" => "uri"
+                	)
+                ),
+                "responseModel" => "jsonResponse"
+            ),
         );
     }
 }

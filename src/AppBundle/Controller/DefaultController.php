@@ -15,7 +15,7 @@ class DefaultController extends Controller
     {
         $swapi = $this->get('swapi');
 
-        $test = $swapi->getPlanets();
+        $test = $swapi->getVehicle(array("id" => 4));
         dump($test);
         die;
     }
