@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div>
+                <p>
+                    {% for starship in data.results %}
+                        <p>
+                            {{ starship.name }}
+                        </p>
+                    {% endfor %}
+                </p>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

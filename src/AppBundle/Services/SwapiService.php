@@ -23,9 +23,7 @@ class SwapiService extends GuzzleClient {
             "name" => 'Star Wars API',
             "description" => "Star Wars API",
             // list des opérations supportées
-            "operations" => array_merge(
-                $this->getPlanetOperations($uri)
-            ),
+            "operations" => $this->getOperations($uri),
             "models" => [
                 "jsonResponse" => [
                     "type" => "object",
@@ -39,12 +37,18 @@ class SwapiService extends GuzzleClient {
         parent::__construct($client, $description);
     }
 
-    protected function getPlanetOperations($uri) {
+    protected function getOperations($uri) {
     	return array(
             "getPlanets" => array(
                 "httpMethod" => "GET",
-                "uri" => $uri . "planets/",
-                "responseModel" => "jsonResponse"
+                "uri" => $uri . "planets/?page={page}",
+                "responseModel" => "jsonResponse",
+                "parameters" => array(
+                	"page" => array(
+                		"required" => true,
+                        "location" => "query"
+                	)
+                ),
             ),
             "getPlanet" => array(
                 "httpMethod" => "GET",

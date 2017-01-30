@@ -114,6 +114,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
+        // starships
+        if ($pathinfo === '/starships') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::starshipsAction',  '_route' => 'starships',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
