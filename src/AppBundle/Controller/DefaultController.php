@@ -15,19 +15,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $swapi = $this->get('swapi');
-
-        $test = $swapi->getFilm(array("id" => 4));
-        // $crawl = nl2br($test['opening_crawl']);
-        $order   = array("\r\n", "\n", "\r");
-        $crawl = str_replace("\r\n\r\n", '<br><br>', $test['opening_crawl']);
-        // dump($crawl);die;
-        // $crawl = '<p>' . preg_replace('#(<br>[\r\n]+){2}#', '</p><p>', $crawl) . '</p>';
-
-        return array(
-            'data' => $test,
-            'crawl' => $crawl
-        );
+        return array();
     }
 
     /**
@@ -38,7 +26,24 @@ class DefaultController extends Controller
     {
         $swapi = $this->get('swapi');
 
-        $data = $swapi->getPlanets(array("page" => 4));
+        $data = $swapi->getStarships(array("page" => 2));
+
+        dump($data);die;
+
+        return array(
+            'data' => $data,
+        );
+    }
+
+    /**
+     * @Route("/people", name="people")
+     * @Template("default/people.html.twig")
+     */
+    public function peopleAction(Request $request)
+    {
+        $swapi = $this->get('swapi');
+
+        $data = $swapi->getStarships(array("page" => 2));
 
         dump($data);die;
 

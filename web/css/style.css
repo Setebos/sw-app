@@ -47,3 +47,54 @@ body {
     font-family: StarWars;
     src: url(fonts/Starjedi.ttf);
 }
+
+/*******************************************************
+*
+********************************************************/
+
+.flex-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.flex-item {
+	flex-grow: 0;
+	margin: 10px;
+}
+
+.flex-homepage {
+	height: 350px;
+	width: 350px;
+	background-color: red;
+	background-size: cover;
+	padding: 5px;
+}
+
+.item-link {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	text-decoration: none;
+	color: inherit;
+}
+
+.item-people {
+	background-image: url("../img/vader.jpeg");
+}
+
+.item-planets {
+	background-image: url("../img/coruscant.png");
+}
+
+.item-starships {
+	background-image: url("../img/destroyer.jpg");
+}
+
+.item-vehicles {
+	background-image: url("../img/atat.jpg");
+}
+
+.item-species {
+	background-image: url("../img/species.jpg");
+}

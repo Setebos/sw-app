@@ -1,24 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="titles">
-                <div id="titlecontent">
-                    <p>{{crawl|raw}}</p>
-                </div>
-            </div>
-
-            <div id="welcome" style="margin-top:25em">
-                <h1><span>STAR WARS</h1>
-            </div>
-
-            <div>
-                <p>
-                    {{ data.title }}
-                </p>
-            </div>
-
-        </div>
+    <h1>STAR WARS</h1>
+    <div class="flex-container">
+        <div class="flex-item flex-homepage item-people"><a href="#" class="item-link">People</a></div>
+        <div class="flex-item flex-homepage item-planets"><a href="#" class="item-link">Planets</a></div>
+        <div class="flex-item flex-homepage item-species"><a href="#" class="item-link">Species</a></div>
+        <div class="flex-item flex-homepage item-starships"><a href="{{ path('starships') }}" class="item-link">Starships</a></div>
+        <div class="flex-item flex-homepage item-vehicles"><a href="#" class="item-link">vehicles</a></div>
+        <!-- <div class="flex-item flex-homepage"><a href="#" class="item-link">Films</a></div> -->
     </div>
 {% endblock %}

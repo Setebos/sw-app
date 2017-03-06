@@ -79,8 +79,14 @@ class SwapiService extends GuzzleClient {
             ),
             "getStarships" => array(
                 "httpMethod" => "GET",
-                "uri" => $uri . "starships/",
-                "responseModel" => "jsonResponse"
+                "uri" => $uri . "starships/?page={page}",
+                "responseModel" => "jsonResponse",
+                "parameters" => array(
+                    "page" => array(
+                        "required" => true,
+                        "location" => "query"
+                    )
+                ),
             ),
             "getStarship" => array(
                 "httpMethod" => "GET",
